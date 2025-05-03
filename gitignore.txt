@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Virtual environments
+venv/
+env/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Data & model files
+*.csv
+*.tsv
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.pt
+*.onnx
+*.tflite
+*.weights
+*.ckpt
+
+# Checkpoints, outputs, and experiments
+checkpoints/
+outputs/
+runs/
+results/
+models/
+experiments/
+logs/
+
+# Datasets and archives
+data/
+datasets/
+*.zip
+*.tar.gz
+*.rar
+
+# System files
+.DS_Store
+Thumbs.db
