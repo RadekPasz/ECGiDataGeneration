@@ -2,7 +2,7 @@ torch==2.3.0
 torchvision==0.18.0
 torchaudio==2.3.0
 scikit-learn==1.5.2
-matplotlib==3.10.0
+matplotlib==3.8.4
 seaborn==0.13.2
 numpy
 pandas
