@@ -12,7 +12,7 @@ import torch.nn.functional as F
 # -------------------------------
 latent_dim = 100
 seq_len = 150
-epochs = 10
+epochs = 50
 batch_size = 2
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -113,7 +113,8 @@ def train_scgan(data_folder):
                 loss_Lap = torch.mean(torch.abs(fast_laplacian(fake_bsp))) + \
                            torch.mean(torch.abs(fast_laplacian(fake_hsp)))
 
-                loss_G = loss_GAN + 10 * loss_L1 + 1 * loss_Lap + 1 * loss_Temporal
+                #loss_G = loss_GAN + 10 * loss_L1 + 1 * loss_Lap + 1 * loss_Temporal
+                loss_G = loss_GAN + 10 * loss_L1 + 1 * loss_Temporal
 
             opt_G.zero_grad()
             scaler.scale(loss_G).backward()
@@ -122,8 +123,8 @@ def train_scgan(data_folder):
 
         print(f"[Epoch {epoch+1}/{epochs}] Loss_G: {loss_G.detach().item():.4f} | Loss_D: {loss_D.detach().item():.4f}")
 
-        if (epoch + 1) % 10 == 0:
-            torch.save(G.state_dict(), f"scgan_epoch_{epoch+1}.pth")
+        #if (epoch + 1) % 10 == 0:
+        #    torch.save(G.state_dict(), f"scgan_epoch_{epoch+1}.pth")
 
     torch.save(G.state_dict(), "scgan_generator_laplacian.pth")
     print("Model saved to scgan_generator_laplacian.pth")
