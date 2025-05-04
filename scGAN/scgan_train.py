@@ -130,4 +130,4 @@ def train_scgan(data_folder):
     print("Model saved to scgan_generator_laplacian.pth")
 
 if __name__ == "__main__":
-    train_scgan(data_folder="resized_sequence_dataset")
+    train_scgan(data_folder="sequence_dataset")
