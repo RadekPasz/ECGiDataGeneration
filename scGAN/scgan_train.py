@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from torch.cuda.amp import autocast, GradScaler
-from scgan_models import SeqBSPHSPGenerator, SeqBSPHSPDiscriminator
+from scGAN.scgan_models import SeqBSPHSPGenerator, SeqBSPHSPDiscriminator
 import torch.nn.functional as F
 
 # -------------------------------
